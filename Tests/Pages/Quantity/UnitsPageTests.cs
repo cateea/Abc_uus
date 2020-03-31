@@ -20,11 +20,11 @@ namespace Abc.Tests.Pages.Quantity
         }
 
         private class UnitsRepository : BaseTestRepository<Unit, UnitData>, IUnitsRepository { }
-        private class MeasuresRepository : BaseTestRepository<Measures, MeasureData>, IMeasuresRepository { }
+        private class MeasuresRepository : BaseTestRepository<Measures, MeasureDataData>, IMeasuresRepository { }
 
         private UnitsRepository units = new UnitsRepository();
         private MeasuresRepository measures = new MeasuresRepository();
-        private MeasureData data;
+        private MeasureDataData data;
 
         [TestInitialize]
         public override void TestInitialize()
@@ -32,7 +32,7 @@ namespace Abc.Tests.Pages.Quantity
             base.TestInitialize();
             units = new UnitsRepository();
             measures = new MeasuresRepository();
-            data = GetRandom.Object<MeasureData>();
+            data = GetRandom.Object<MeasureDataData>();
             var m = new Measures(data);
             measures.Add(m).GetAwaiter();
             addRandomMeasures();
@@ -43,7 +43,7 @@ namespace Abc.Tests.Pages.Quantity
         {
             for (var i = 0; i < GetRandom.UInt8(0, 10); i++)
             {
-                var d = GetRandom.Object<MeasureData>();
+                var d = GetRandom.Object<MeasureDataData>();
                 var m = new Measures(d);
                 measures.Add(m).GetAwaiter();
             }

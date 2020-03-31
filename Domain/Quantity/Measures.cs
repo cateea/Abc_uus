@@ -3,9 +3,9 @@ using Abc.Domain.Common;
 
 namespace Abc.Domain.Quantity
 {
-    public sealed class Measures: Entity<MeasureData>
+    public sealed class Measures: Entity<MeasureDataData>
     {
         public Measures(): this(null) { }
-        public Measures(MeasureData data) : base(data) { }
+        public Measures(MeasureDataData data) : base(data) { }
     }
 }

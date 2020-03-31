@@ -10,7 +10,7 @@ namespace Abc.Tests.Pages.Quantity
 {
     [TestClass]
     public class MeasuresPageTests : AbstractClassTests<MeasuresPage,
-        BasePage<IMeasuresRepository, Measures, MeasureView, MeasureData>>
+        BasePage<IMeasuresRepository, Measures, MeasureView, MeasureDataData>>
     {
         private class TestClass : MeasuresPage
         {
@@ -19,7 +19,7 @@ namespace Abc.Tests.Pages.Quantity
             }
         }
 
-        private class TestRepository : BaseTestRepository<Measures, MeasureData>, IMeasuresRepository
+        private class TestRepository : BaseTestRepository<Measures, MeasureDataData>, IMeasuresRepository
         {
 
         }
@@ -57,7 +57,7 @@ namespace Abc.Tests.Pages.Quantity
         [TestMethod]
         public void ToViewTest()
         {
-            var data = GetRandom.Object<MeasureData>();
+            var data = GetRandom.Object<MeasureDataData>();
             var view = obj.toView(new Measures(data));
             testArePropertyValuesEqual(view, data);
         }

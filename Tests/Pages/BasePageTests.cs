@@ -8,7 +8,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace Abc.Tests.Pages
 {
     [TestClass]
-    public class BasePageTests : AbstractClassTests<BasePage<IMeasuresRepository, Measures, MeasureView, MeasureData>, PageModel>
+    public class BasePageTests : AbstractClassTests<BasePage<IMeasuresRepository, Measures, MeasureView, MeasureDataData>, PageModel>
     {
         [TestInitialize] public override void TestInitialize()
         {
@@ -16,7 +16,7 @@ namespace Abc.Tests.Pages
             obj = new TestClass(new TestRepository());
         }
 
-        private class TestClass : BasePage<IMeasuresRepository, Measures,MeasureView, MeasureData>
+        private class TestClass : BasePage<IMeasuresRepository, Measures,MeasureView, MeasureDataData>
         {
             protected internal TestClass(IMeasuresRepository r = null) : base(r) => PageTitle = "Measures";
             
@@ -29,7 +29,7 @@ namespace Abc.Tests.Pages
 
             protected internal override MeasureView toView(Measures obj) => MeasureViewFactory.Create(obj);
         }
-        private class TestRepository : BaseTestRepository<Measures, MeasureData>, IMeasuresRepository { }
+        private class TestRepository : BaseTestRepository<Measures, MeasureDataData>, IMeasuresRepository { }
 
         [TestMethod] public void CreateBasePageWithRepositoryTest()
         {

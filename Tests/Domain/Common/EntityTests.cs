@@ -5,11 +5,11 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Abc.Tests.Domain.Common {
 
-    [TestClass] public class EntityTests : AbstractClassTests<Entity<MeasureData>, object> {
+    [TestClass] public class EntityTests : AbstractClassTests<Entity<MeasureDataData>, object> {
 
-        private class testClass : Entity<MeasureData> {
+        private class testClass : Entity<MeasureDataData> {
 
-            public testClass(MeasureData d = null) : base(d) { }
+            public testClass(MeasureDataData d = null) : base(d) { }
 
         }
 
@@ -19,14 +19,14 @@ namespace Abc.Tests.Domain.Common {
         }
 
         [TestMethod] public void DataTest() {
-            var d = GetRandom.Object<MeasureData>();
+            var d = GetRandom.Object<MeasureDataData>();
             Assert.AreNotSame(d, obj.Data);
             obj = new testClass(d);
             Assert.AreSame(d, obj.Data);
         }
 
         [TestMethod] public void DataIsNullTest() {
-            var d = GetRandom.Object<MeasureData>();
+            var d = GetRandom.Object<MeasureDataData>();
             Assert.IsNotNull(obj.Data);
             obj.Data = d;
             Assert.AreSame(d, obj.Data);

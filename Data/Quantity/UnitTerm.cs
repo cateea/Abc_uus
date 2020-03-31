@@ -1,6 +1,6 @@
 ﻿namespace Abc.Data.Quantity
 {
-    public class UnitTerm : CommonTerm
+    public class UnitTerm : CommonTermData
     {
 
     }

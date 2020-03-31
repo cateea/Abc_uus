@@ -4,7 +4,7 @@ using Abc.Facade.Quantity;
 
 namespace Abc.Pages.Quantity {
 
-    public abstract class MeasuresPage : BasePage<IMeasuresRepository, Measures, MeasureView, MeasureData> {
+    public abstract class MeasuresPage : BasePage<IMeasuresRepository, Measures, MeasureView, MeasureDataData> {
 
         protected internal MeasuresPage(IMeasuresRepository r = null): base(r) {
             PageTitle = "Measures";

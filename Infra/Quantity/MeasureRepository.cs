@@ -3,11 +3,11 @@ using Abc.Domain.Quantity;
 
 namespace Abc.Infra.Quantity {
 
-    public class MeasureRepository : UniqueEntityRepository<Measures, MeasureData>, IMeasuresRepository {
+    public class MeasureRepository : UniqueEntityRepository<Measures, MeasureDataData>, IMeasuresRepository {
 
         public MeasureRepository(QuantityDbContext c) : base(c, c.Measures) { }
 
-        protected internal override Measures toDomainObject(MeasureData d) => new Measures(d);
+        protected internal override Measures toDomainObject(MeasureDataData d) => new Measures(d);
 
     }
 
